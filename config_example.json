@@ -1,0 +1,9 @@
+{
+  "api": {
+    "tmdb": {
+      "key": "<KEY>",
+      "user_token": "<TOKEN>",
+      "base_url": "https://api.themoviedb.org/3"
+    }
+  }
+}
