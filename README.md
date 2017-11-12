@@ -14,6 +14,6 @@ For api docs go to http://localhost:5000/apidocs
 
 # Running in docker
 
-* docker build -t movie-service:1.0 .
-* docker run -p 5000:5000 -d -t movie-service:1.0
+* docker build -t watch-history-service:1.0 .
+* docker run -p 5000:5000 -d -t watch-history-service:1.0
 
