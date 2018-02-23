@@ -13,4 +13,5 @@ class WatchHistory:
     def add_movie(self, movie_id):
         self.movies[movie_id] = Movie(movie_id, int(time.time()))
 
-
+    def remove_movie(self, movie_id):
+        del self.movies[movie_id]

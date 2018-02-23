@@ -24,7 +24,7 @@ def add_movie():
 
     watch_history = watch_histories.get_watch_history(user_id)
     watch_history.add_movie(movie_id)
-    log.debug("Added movie: {} for user: {}".format(movie_id, user_id))
+    log.info("Added movie: {} for user: {}".format(movie_id, user_id))
     return Response(status=200, mimetype='application/json')
 
 
@@ -37,3 +37,16 @@ def get_watch_history():
     data = WatchHistoryDto().create(watch_history)
 
     return jsonify(data)
+
+
+@app.route("/watch-history", methods=["delete"])
+@swag_from("swagger/movie.yml")
+def remove_movie():
+    user_id = 1
+    data = request.get_json(silent=True)
+    movie_id = data["movie_id"]
+
+    watch_history = watch_histories.get_watch_history(user_id)
+    watch_history.remove_movie(movie_id)
+    log.info("Removed movie: {} for user: {}".format(movie_id, user_id))
+    return Response(status=200, mimetype='application/json')
